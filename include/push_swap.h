@@ -44,7 +44,7 @@ typedef struct s_ps
 	int		total_ops;
 }	t_ps;
 
-/* stack utils *//*esse ja foi etendi*/
+/* stack utils */
 t_stack	*new_node(int value);
 void	push_node(t_stack **stack, t_stack *node);
 t_stack	*pop_node(t_stack **stack);
@@ -54,9 +54,12 @@ void	free_ps(t_ps *ps);
 
 /* parse */
 int		parse_args(t_ps *ps, int argc, char **argv, int start);
+int		is_sorted(t_stack *stack);
+
+/* parse_split */
+int		parse_one_arg(char *arg, t_stack **head, t_stack **tail);
 char	**ft_split(char *s, char c);
 void	free_split(char **arr);
-int		is_sorted(t_stack *stack);
 
 /* args / strategy */
 void	run_sort(t_ps *ps, char *strategy, int bench);

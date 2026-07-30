@@ -4,11 +4,11 @@ BONUS_NAME	= checker
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror
 INCLUDES	= -I include
-RM			= rm -f
 
 SRC_DIR		= src
 SRC			= main.c strategy.c stack_utils.c stack_utils2.c \
-			  ft_str.c ft_nbr.c ft_atoi.c ft_split.c parse.c disorder.c \
+			  ft_str.c ft_nbr.c ft_atoi.c ft_split.c parse.c parse_split.c \
+			  disorder.c \
 			  rotate_utils.c operations_swap.c operations_push.c \
 			  operations_rotate.c operations_rrotate.c \
 			  sort_helpers1.c sort_helpers2.c sort_helpers3.c \
@@ -43,10 +43,10 @@ $(BONUS_DIR)/%.o: $(BONUS_DIR)/%.c
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	$(RM) $(NAME) $(BONUS_NAME)
+	rm -f $(NAME) $(BONUS_NAME)
 
 re: fclean all
 
